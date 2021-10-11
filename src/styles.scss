@@ -187,8 +187,17 @@ $ring-light:  #14e48d;
     padding-bottom: 5px;
     border-top: 2px solid rgba($color: $primary, $alpha: 0.3);
     border-right: 1px solid rgba($color: $primary, $alpha: 0.1);
-    border-top-right-radius: 5px;
-    
+    border-top-right-radius: 5px;   
+}
+
+.card{
+    max-width: 30%;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.header-area{
+    position: static !important;
 }
 
 .text-bold{

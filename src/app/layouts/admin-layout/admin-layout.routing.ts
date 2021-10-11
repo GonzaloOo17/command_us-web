@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
-import { SensoresComponent } from '../../pages/sensores/sensores.component';
-import { SensoresByIdComponent } from 'src/app/pages/sensores-by-id/sensores-by-id.component';
-import { ListaSensoresComponent } from '../../pages/lista-sensores/lista-sensores.component';
-import { ConmutacionesComponent } from '../../pages/conmutaciones/conmutaciones.component';
 import { LoginComponent } from 'src/app/pages/login/login.component';
+import { AdminDashboardComponent } from 'src/app/pages/admin-dashboard/admin-dashboard.component';
+import { RestaurantsListComponent } from 'src/app/pages/admin-dashboard/restaurants-list/restaurants-list.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -22,6 +20,17 @@ export const AdminLayoutRoutes: Routes = [
         path: 'login',
         component: LoginComponent
       },
+      {
+        path: 'admin',
+        component: AdminDashboardComponent,
+        children: [
+            {
+          path: '',
+          component: RestaurantsListComponent
+      }
+    ]
+      },
+
     // {
     //     path: '**',
     //     redirectTo: 'dashboard'

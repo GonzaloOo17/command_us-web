@@ -7,9 +7,8 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { DashboardComponent }       from '../../pages/dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SensoresComponent } from '../../pages/sensores/sensores.component';
-import { SensoresByIdComponent } from 'src/app/pages/sensores-by-id/sensores-by-id.component';
-import { ListaSensoresComponent } from '../../pages/lista-sensores/lista-sensores.component';
+import { AdminDashboardComponent } from 'src/app/pages/admin-dashboard/admin-dashboard.component';
+import { RestaurantsListComponent } from 'src/app/pages/admin-dashboard/restaurants-list/restaurants-list.component';
 
 
 @NgModule({
@@ -22,9 +21,8 @@ import { ListaSensoresComponent } from '../../pages/lista-sensores/lista-sensore
   ],
   declarations: [
     DashboardComponent,
-    SensoresComponent,
-    SensoresByIdComponent,
-    ListaSensoresComponent
+    AdminDashboardComponent,
+    RestaurantsListComponent
     // UserComponent,
     // TableComponent,
     // UpgradeComponent,

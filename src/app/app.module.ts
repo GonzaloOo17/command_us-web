@@ -15,15 +15,14 @@ import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Cookie } from "ng2-cookies";
-import { ListaSensoresComponent } from './pages/lista-sensores/lista-sensores.component';
-import { ConmutacionesComponent } from './pages/conmutaciones/conmutaciones.component';
+import { CardEditComponent } from './pages/admin-dashboard/card-edit/card-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminLayoutComponent,
-    ConmutacionesComponent
+    CardEditComponent
    
    
   ],
