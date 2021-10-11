@@ -5,34 +5,23 @@ import { SensoresComponent } from '../../pages/sensores/sensores.component';
 import { SensoresByIdComponent } from 'src/app/pages/sensores-by-id/sensores-by-id.component';
 import { ListaSensoresComponent } from '../../pages/lista-sensores/lista-sensores.component';
 import { ConmutacionesComponent } from '../../pages/conmutaciones/conmutaciones.component';
+import { LoginComponent } from 'src/app/pages/login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'dashboard', 
+        redirectTo: 'home', 
         pathMatch: 'full'
     },
     {
-        path: 'dashboard',
+        path: 'home',
         component: DashboardComponent 
 
     },
-    { 
-        path: 'sensors',
-        component: SensoresComponent 
-    },
     {
-        path: 'sensorsbyid',
-        component: SensoresByIdComponent
-    },
-    {
-        path: 'listasensores/:panelId',
-        component: ListaSensoresComponent
-    },
-    {
-        path: 'listasensores/:panelId/conm/:sensorId',
-        component: ConmutacionesComponent
-    },
+        path: 'login',
+        component: LoginComponent
+      },
     // {
     //     path: '**',
     //     redirectTo: 'dashboard'

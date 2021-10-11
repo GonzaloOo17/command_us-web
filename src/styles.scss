@@ -25,6 +25,17 @@ $ring-light:  #14e48d;
 	color: #87fcfc !important;
 }
 
+.btn-primary{
+    background-color: #fba70b;
+    border-radius: 25px;
+    color:white !important;
+    padding: 0px 20px;
+}
+
+.vh-100{
+    height: 100vh;
+}
+
 .btn-primary-light{
     background-color: $primary-light !important;
     color: $primary;
@@ -109,6 +120,11 @@ $ring-light:  #14e48d;
     padding: 20px;
 }
 
+.main-nav{
+    background-color: white !important;
+    border-radius: 20px;
+    padding: 0px 30px;
+}
 
 
 .button-compound{

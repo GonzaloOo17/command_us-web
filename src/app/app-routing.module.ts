@@ -8,13 +8,10 @@ import { LoginComponent } from './pages/login/login.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: '',
     pathMatch: 'full',
   },
-  {
-    path: '',
-    component: LoginComponent
-  },
+  
    {
     path: '',
     component: AdminLayoutComponent,
@@ -26,7 +23,7 @@ const routes: Routes = [
 ]},
   {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: ''
   }
 ];
 
