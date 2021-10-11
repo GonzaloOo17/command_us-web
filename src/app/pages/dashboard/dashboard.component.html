@@ -1,0 +1,153 @@
+
+
+<main  class="content " class="border-3 " >
+  <div class="container-fluid">
+      <div class="header">
+          <h1 class="header-title">
+               Welcome back, {{mostrarUsuarioLogueado()}} 
+          </h1>
+      </div>
+  </div>
+
+
+  <div class="col-auto">
+      <div class="card border-bottom-5 border-right">
+          
+          <ng-container *ngIf="plus; else elseTemplate">
+              <div class="card-header">
+                  <h2 class="card-title text-center fs-3">PANELES DISPONIBLES {{totalPaneles}}</h2>
+              </div>
+
+              <div >
+                  <table class="table table-striped table-hover" >
+                    <thead >
+                      <tr>
+                        <th style="width:15%;">Id</th>
+                        <th style="width:15%">Nombre Panel</th>
+                        <th style="width:10%" class="d-none d-md-table-cell">Estado</th>
+                        <th class="d-none d-md-table-cell">Sensores</th>
+                        <th style="width:10%;">Acciones</th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr  *ngFor="let panel of paneles; let i=index">
+                          <td class="fs-5" > {{panel._id}}  </td>
+                          <td class="fs-5" > {{panel.name}} </td>  
+                          <td class="fs-5" >  {{ panel.cfg[0].active }} </td>       
+     
+                          <td class="d-none d-md-table-cell">
+                               <div class = "badge rounded-pill bg-primary fs-6 ">
+                              total:  {{panel.stat[0].sensors.total}} 
+                              </div>
+                              <div class = "badge rounded-pill bg-secondary fs-6">
+                               validando:  {{panel.stat[0].sensors.validating}}
+                              </div>
+                              <div class = "badge rounded-pill bg-danger fs-6">
+                              error:  {{panel.stat[0].sensors.test_ko}}
+                              </div>
+                              <div class = "badge rounded-pill bg-success fs-6">
+                              finalizado:  {{panel.stat[0].sensors.finished_ok}}
+                              </div>
+                              <div class = "badge rounded-pill bg-info fs-6">
+                              pausado:  {{panel.stat[0].sensors.paused}}
+                              </div>
+                              <div class = "badge rounded-pill bg-dark fs-6">
+                              libre:  {{panel.stat[0].sensors.free}}
+                              </div>
+                          </td>         
+                          <td  class="table-action " >
+                             <i class="align-middle fas fa-fw fa-plus-circle text-success fs-5"  (click)="pulsaPlus(panel._id)"></i>
+                             <!-- <p>
+                             
+                              <button class="btn btn-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Button with data-bs-target
+                                   <i class="align-middle fas fa-fw fa-plus-circle text-success fs-5  "  ></i>
+
+                              </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                              <div class="card card-body">
+                                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                              </div>
+                            </div>                                     -->
+                          </td>            
+                      </tr>
+
+                    </tbody>
+                  </table>
+              </div>
+
+          </ng-container>
+          <ng-template #elseTemplate>
+
+              <div class="card-header">
+                  <h2 class="card-title text-center fs-3">SENSORES DISPONIBLES EN PANEL {{panel_id}}</h2>
+              </div> 
+              <div class="p-3">
+                  <table class="table table-striped" >
+                    <thead >
+                      <tr>
+                        <th style="width:30%;">Id</th>
+                        <th style="width:55%">Estado</th>
+                        <th  style="width:20%" >Acciones</th>                
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr  *ngFor="let sensor of sensoresByPanel; let i=index">                         
+                          <td  class="   fs-5 pl-4" > {{sensor._id}}  </td>
+                         
+                             <td>
+                              <table  class="table table-striped">         
+               
+                              <!-- <body>    -->
+
+                                  <td>{{sensoresByPanel[i].stat[0].state}}</td>
+      
+                                  <!-- <td class = "badge bg-primary  ">   Validating - </td><br>
+                                  <span class = "text-warning fs-7 pl-3">  Init:  #####</span><br>
+                                  <span class = "text-secondary fs-7  pl-3">     End : #####</span><br>
+                                  <hr>
+                                  <td class = "badge bg-danger ">  Error - </td><br>
+                                  <span class = "text-warning fs-6  pl-3"> Init : #####</span><br>
+                                  <span class = "text-secondary fs-6 pl-3">   End: #####</span><br>
+                                  <hr>
+                                  <td class = "badge bg-success ">  Finished ok - </td><br>
+                                  <span class = "text-warning fs-7  pl-3"> Init : #####</span><br>
+                                  <span class = "text-secondary fs-7 pl-3">   End: #####</span><br>
+                                  <hr>
+                                  <td class = "badge bg-secondary ">  Paused - </td><br>
+                                  <span class = "text-warning fs-6  pl-3"> Init : #####</span><br>
+                                  <span class = "text-secondary fs-6 pl-3">   End: #####</span> -->
+                        
+      
+                              <!-- </body> -->
+      
+                              </table>
+                          </td> 
+                          <td  class="table-action " >
+                              <i class="align-middle fas fa-fw fa-arrow-left text-warning fs-5 p-2"  (click)="pulsaPlus(panel_id)"></i>
+                              <i class="align-middle fas fa-fw fa-plus-circle text-success fs-5 p-3"
+                              data-bs-toggle="tooltip" title="Tooltip on top"
+                              ></i>
+                              <i class="align-middle fas fa-fw fa-chart-line text-primary fs-5 pl-3" ></i>
+
+                          </td>
+      
+                                            
+                         
+                      </tr>
+                  
+                      <!-- // parte de la tabla del Sensores -->
+                     
+                 
+                    </tbody>
+                  </table>
+              </div>
+
+          </ng-template>
+          
+
+      </div>
+  </div>
+</main>

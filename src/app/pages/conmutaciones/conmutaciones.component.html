@@ -1,0 +1,60 @@
+<main  class="content " class="border-3 " >
+    <div class="container-fluid">
+        <div class="header " >
+            <h1 class="header-title" >
+                 Welcome back, {{mostrarUsuarioLogueado()}} 
+            </h1> 
+            <div class="col-auto" >
+                <div class="card border-bottom-5 border-right " >           
+                        <h2 class="card-title text-center fs-5 p-15">Conmutaciones en sensor {{idSensor}}</h2> 
+                </div>     
+            </div>
+
+            <table class="table table-striped table-hover" >
+                <thead   style="background-image: linear-gradient(to bottom right, #eaf2f3f5, #00778B);">
+                  <tr>
+                    <th style="width:20%;">Hora inicio</th>
+                    <th style="width:5%">Canal</th>
+                    <th  style="width:15%">Estado</th>  
+                    <th  style="width:15%">ON</th>
+                    <th  style="width:15%">OFF</th>    
+                    <th  style="width:25%">Desviación</th>    
+                    <th  style="width:15%" class="text-center">Acciones</th>   
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr  *ngFor="let comm of commutation; let i=index">                      
+             
+                      <td> {{ comm.timestamp | date : 'dd/MM/YYYY HH:mm:ss' }}</td>
+                      <td> {{ comm.channel }}</td>
+                      <td> {{ comm.value }}</td>
+
+                      
+                      <ng-container *ngIf="i%2==1; else elseTemplate">
+                       <td> 00:{{ TablaOnOff[i] | date : 'mm:ss' }}</td>
+                      </ng-container>
+                      <ng-template #elseTemplate>
+                        <td></td>
+                      </ng-template>
+                      
+                 
+                      <ng-container *ngIf="i%2==0; else elseTemplate">
+                        <td> 00:{{ TablaOnOff[i] | date : 'mm:ss' }}</td>
+                       </ng-container>
+                       <ng-template #elseTemplate>
+                         <td></td>
+                       </ng-template>
+                      <td> {{comm.deviation}}</td>
+      
+                      <td  class="table-action " >
+                          <i class="align-middle fas fa-reply text-success  pl-3"  [routerLink]="['./dashboard']"></i>
+                      </td>                                                
+                     
+                  </tr>                  
+                </tbody>
+              </table>
+
+
+        </div>
+    </div>
+</main>

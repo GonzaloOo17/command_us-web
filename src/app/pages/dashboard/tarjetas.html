@@ -1,0 +1,106 @@
+<main  class="content " class="border-3 " >
+
+    <div class="card-body mh-300" *ngIf="loading">
+        <div class="d-flex justify-content-center align-items-center h-100 mh-300">       
+          <div class="spinner-border text-primary" style="width: 5rem; height: 5rem;" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+      
+
+        <div class="container-fluid" *ngIf="!loading">
+                    <div class="header " >
+                        <h1 class="header-title" >
+                            Welcome back, {{mostrarUsuarioLogueado()}} 
+                        </h1> 
+                        <div class="col-auto" >
+                            <div class="card border-bottom-5 border-right " >           
+                                    <h2 class="card-title text-center fs-5 p-15">PANELES DISPONIBLES {{totalPaneles}}</h2> 
+                            
+                            </div>     
+                        </div>        
+                        <div class="row ">
+                                <div  *ngFor="let panel of paneles; let i=index" class="col-6" >
+                                    <div class="card " (click)="pulsaBotonTarjetas(panel._id)" >                        
+                                        <!-- <h5  style="background-image: linear-gradient(to bottom right, white, teal);" class="card-header fs-4 "> -->
+                                            <h5   style="background-image: linear-gradient(to bottom right, #0c9db61c, #00778B);" class="card-header fs-4 ">
+
+                                        
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    {{panel._id}}                            
+                                                    
+                                                    <h5>Estado:   <ng-container *ngIf="panel.cfg[0].active==true; else elseTemplate">
+                                                        <i class="fa fa-spinner fa-spin" style="color: rgba(2, 14, 4, 0.616);"></i>
+                                                        
+                                                    </ng-container>
+                                                    <ng-template #elseTemplate>
+                                                    <i class="	far fa-window-close" style="color: crimson"></i>
+                                                    </ng-template></h5>
+                                                </div>
+                                                <div class="col-3">
+                                                
+                                                    <h5 class="card-title ">Sensores: {{panel.stat[0].sensors.total}}</h5>
+                                                </div>
+                                            </div>
+                                        </h5>
+                                
+                                        <div class="card-body">                        
+                                                <span class="card-text" class="row">  
+                                                    <div class="col-6">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div>
+                                                                    <span >Validando: </span>         
+                                                                </div>
+                                                                <div>
+                                                                    <span >Error: </span>         
+                                                                </div>                 
+                                                                <div>
+                                                                    <span >Finalizado: </span>                                                    
+                                                                </div> 
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div><span class="badge badge-primary col col-md-3">   {{panel.stat[0].sensors.validating}}</span></div>
+                                                                <div><span class="badge badge-danger col col-md-3" >  {{panel.stat[0].sensors.test_ko}}</span></div>
+                                                                <div><span class="badge badge-success col col-md-3">  {{panel.stat[0].sensors.finished_ok}}</span></div>                                                   
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-6"> 
+                                                        <div class="row"> 
+                                                            <div class="col-6">                                          
+                                                                <div>
+                                                                    Pausado:
+                                                                </div>  
+                                                                <div>
+                                                                    Libre:
+                                                                </div>       
+                                                            </div>  
+                                                        
+                                                            <div class="col-6">                                            
+                                                                <div>
+                                                                    <span  class="badge badge-info col col-md-3" > {{panel.stat[0].sensors.paused}}</span> 
+                                                                </div>  
+                                                                <div>
+                                                                    <span  class="badge badge-info col col-md-3" > {{panel.stat[0].sensors.free}}</span> 
+                                                                </div>                        
+                                                            </div> 
+                                                        </div>
+                                                    </div>                              
+                                                </span>             
+                                                <!-- <a  class="btn btn-primary" (click)="pulsaBotonTarjetas(panel._id)">Ver sensores  </a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+        
+        </div>
+
+
+</main>
+
+ 

@@ -1,0 +1,479 @@
+// Theme variables
+@import "./assets/scss/1-variables/_app.scss";
+
+$primary: #00778B;
+$blue:    #5C59ED;
+$indigo:  #3f51b5;
+$purple:  #a877b5;
+$pink:    #e91e63;
+$red:     #F26666;
+$danger:     #eb3c3c;
+$orange:  #ff9800;
+$yellow:  #F2B51D;
+$green:   #38C485;
+$teal:    #009688;
+
+$ring-light:  #5ecc98;
+$ring-light:  #8be6c0;
+$ring-light:  #14e48d;
+
+// .modal, .modal-backdrop{
+//     z-index: none !important;
+// }
+
+.text-accent{
+	color: #87fcfc !important;
+}
+
+.btn-primary-light{
+    background-color: $primary-light !important;
+    color: $primary;
+}
+
+.btn-warning-light{
+    background-color: rgba($color: $yellow, $alpha: 0.7) !important; 
+}
+
+.btn-warning-light-2{
+    background-color: rgba($color: $yellow, $alpha: 0.25) !important;
+}
+
+.btn-success-light{
+    background-color: rgba($color: $success, $alpha: 1) !important;
+    color: $green;
+}
+
+.btn-danger-light{
+    background-color: $red-light !important;
+    color: $red;
+}
+
+.ngx-toastr.toast-success{
+    background-color: rgba($color: $success, $alpha: 1) !important;
+}
+
+.px_10{
+    padding: 0px 10px !important;
+}
+
+.px_30{
+    padding: 0px 30px !important;
+}
+
+.mb-2{
+    margin-bottom: 5px;
+}
+
+.mb-3{
+    margin-bottom: 10px;
+}
+
+.ngx-toastr.toast-primary{
+    background-color: rgba($color: $primary, $alpha: 1) !important;
+}
+
+.ngx-toastr.toast-warning{
+    background-color: rgba($color: $yellow, $alpha: 1) !important;
+}
+
+.ngx-toastr.toast-danger{
+    background-color: rgba($color: $success, $alpha: 1) !important;
+}
+
+.text-dark-grey{
+    color: #333333 !important;
+}
+
+.text-grey{
+    color: #5c5c5c;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.text-black{
+    color: black !important;
+}
+
+.bg-dark{
+    color: rgb(238, 238, 238);
+}
+
+.text-lightt{
+    color: rgb(175, 175, 175) !important;
+}
+
+.inside-button{
+    margin: 20px;   
+    padding: 20px;
+}
+
+
+
+.button-compound{
+    border-radius: 5px;
+    overflow: hidden;
+    width: fit-content;
+    height: fit-content;
+}
+
+.mh-300{
+    min-height: 300px !important;
+}
+
+.header{
+    min-height: 150px;
+}
+
+.alert-danger{
+    width: fit-content !important;
+    max-width: 100%;
+}
+
+.sidebar-brand{
+    background: #00778b;
+    background: linear-gradient(275deg, rgb(1, 106, 124) 1%, rgb(1, 72, 83) 100%) !important;
+}
+
+// .wraper-header:before{
+//     background: #00778b !important;
+//     background: linear-gradient(275deg, rgb(1, 72, 83) 1%,  rgb(1, 106, 124)100%) !important;
+//     height: 264px;
+// }
+
+.button-group{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.w-xl-50 {
+    width: 100% !important;
+}
+
+.sm-card{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 5px 5px 11px -3px #d6d6d693;
+} 
+
+.hr-primary{
+    border-top: 1px solid $primary;
+    width: 100%;
+    opacity: 100% !important;
+    height: 0px !important;
+}
+
+.card_body_state{
+    padding-top: 15px;
+    padding-bottom: 5px;
+    border-top: 2px solid rgba($color: $primary, $alpha: 0.3);
+    border-right: 1px solid rgba($color: $primary, $alpha: 0.1);
+    border-top-right-radius: 5px;
+    
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.row_header_connector{
+    border-bottom: 1px solid $primary;
+}
+
+.bg-right-primary{
+    border-right: 1px solid $primary;
+}
+
+.sm-card h4{
+    font-size: 14px;
+}
+
+@media (min-width: 1440px){
+    .w-xl-50 {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 1440px){
+    .flex-sm-wrap {
+        flex-wrap: wrap !important;
+    }
+}
+
+.text-light{
+    color: #bebebe !important;
+}
+
+.mh-80vh{
+    min-height: 80vh;
+}
+
+.cdk-overlay-container{
+    z-index: 1060;
+}
+
+.image-body-map-card{
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.bg-primary-light{
+    background-color: #d9f1f5;
+}
+
+.bg-yellow{
+    background-color: #F0D966 !important;
+}
+
+.bg-blue-accent{
+    background-color: #56DAE0;
+}
+
+.btn-primary-hard{
+    background-color: $primary !important;
+}
+
+.btn-danger-hard{
+    background-color: $danger !important;
+}
+
+.container-rings-device{
+    position: relative;
+    height: 220px;
+}
+
+.badge-grey{
+    background-color: grey;
+}
+
+.container-rings-device .ring-outside {
+    width: 500px !important;
+    height: 180px !important;
+    max-width: 500px !important;
+    max-height: 180px !important;
+    margin: auto;
+}
+
+.card-historics-spec{
+    min-height: 400px;
+}
+
+.container-rings-device .ring-inside {
+    margin: auto;
+    width: 260px !important;
+    height: 130px !important;
+}
+
+.container-rings-device .chart {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.h_300{
+    height: 20vw;
+}
+
+.cog-device-set{
+    font-size: 20px;
+}
+
+.drowpdown-menu-settings-device{
+    top: 50px !important;
+    left: -100px !important;
+}
+
+.minh-100{
+    min-height: 100%;
+}
+
+.image-profile i{
+    font-size: 60px;
+}
+
+.graph-historics-big{
+    width: 500px;
+    height: 300px;
+}
+
+.modal-card-devices{
+    width: 1000px;
+}
+
+.main-panel{
+    background: var(--background-main) !important;
+}
+
+app-admin-layout .wrapper:before{
+    background: linear-gradient(131deg, rgba(0,119,139,1) 1%, rgba(0,44,51,1) 100%) !important;
+    width: 100%;
+    height: 264px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+// // OPTIONS BODY
+// @if $bodyBackground == true{
+//     .main-panel{
+//         background: rgb(0,119,139);
+//         background: linear-gradient(131deg, rgba(0,119,139,1) 1%, rgba(0,44,51,1) 100%) !important;
+//     }
+
+//     app-admin-layout .wrapper:before{
+//         background: none !important;
+//     }
+// }
+
+
+@media (max-width: 768px){
+    .modal-card-devices{
+        width: 90%;
+    }
+    .h_300{
+        height: auto;
+    }
+}
+
+//MEDIA QUERIES MOBILE
+
+@media (max-width: 576px){
+    
+    
+}
+
+
+
+
+// TOGGLE SWITCH
+$multiplier: 0.75;
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px*$multiplier;
+    height: 34px*$multiplier;
+    border: none !important;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px*$multiplier;
+    width: 26px*$multiplier;
+    left: 4px*$multiplier;
+    bottom: 4px*$multiplier;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: $primary;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px $primary;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px*$multiplier);
+    -ms-transform: translateX(26px*$multiplier);
+    transform: translateX(26px*$multiplier);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px*$multiplier;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  //SMALL
+  $multiplier: 0.55;
+.switch-sm {
+    position: relative;
+    display: inline-block;
+    width: 60px*$multiplier;
+    height: 34px*$multiplier;
+    border: none !important;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch-sm input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .switch-sm .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .switch-sm .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px*$multiplier;
+    width: 26px*$multiplier;
+    left: 4px*$multiplier;
+    bottom: 4px*$multiplier;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .switch-sm input:checked + .slider {
+    background-color: $primary;
+  }
+  
+  .switch-sm input:focus + .slider {
+    box-shadow: 0 0 1px $primary;
+  }
+  
+  .switch-sm input:checked + .slider:before {
+    -webkit-transform: translateX(26px*$multiplier);
+    -ms-transform: translateX(26px*$multiplier);
+    transform: translateX(26px*$multiplier);
+  }
+  
+  /* Rounded sliders */
+  .switch-sm .slider.round {
+    border-radius: 34px*$multiplier;
+  }
+  
+  .switch-sm .slider.round:before {
+    border-radius: 50%;
+  }
