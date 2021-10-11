@@ -5,16 +5,26 @@
               <nav class="main-nav">
                   <!-- ***** Logo Start ***** -->
                   <a href="index.html" class="logo">
-                      Lava
+                    <img src="/assets/img/CU/CU-logo_dark.png" alt="Linda Miller" class="img-fluid" width="200" height="150" />
                   </a>
                   <!-- ***** Logo End ***** -->
                   <!-- ***** Menu Start ***** -->
                   <ul class="nav">
                       <li class="scroll-to-section"><a routerLink="/home" class="menu-item">Home</a></li>
-                      <li class="scroll-to-section"><a href="#about" class="menu-item">About</a></li>
+                      
                       
                       <li class="scroll-to-section"><a href="#contact-us" class="menu-item">Contact Us</a></li>
-                      <li class="scroll-to-section"><a routerLink="/login" class="btn btn-primary">Log in</a></li>
+                      <li class="scroll-to-section"><a routerLink="/login" class="btn btn-primary py-0">Log in</a></li>
+                      <li class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          My CU
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Restaurants</a>
+                          <a class="dropdown-item" href="#">Profile</a>
+                          <a class="dropdown-item" href="#">Log out</a>
+                        </div>
+                      </li>
                   </ul>
                   <a class='menu-trigger'>
                       <span>Menu</span>

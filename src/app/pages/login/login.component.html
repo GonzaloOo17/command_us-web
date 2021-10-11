@@ -7,13 +7,13 @@
                 <div class="d-table-cell align-middle">
 
                     <div class="text-center mt-4">
-                        <h1  *ngIf="!noLogin" class="h2">Welcome back</h1>
+                        <h1  *ngIf="!noLogin" class="h2 text-white">Welcome</h1>
 
                         <div>
                             <h2 *ngIf="noLogin" class="badge rounded-pill bg-danger fs-5" > Usuario/Contraseña no validos</h2>
                         </div>
 
-                        <p class="lead">
+                        <p class="lead text-white">
                             Sign in to your account to continue
                         </p>
                     </div>
@@ -22,15 +22,15 @@
                         <div class="card-body">
                             <div class="m-sm-4">
                                 <div class="text-center">
-                                    <img src="/assets/img/orbis/orbis-logo.jpg" alt="Linda Miller" class="img-fluid" width="132" height="132" />
+                                    <img src="/assets/img/CU/CU-logo_dark.png" alt="Linda Miller" class="img-fluid" width="250" height="170" />
                                 </div>
-                                <form>
+                                <form class="mt-2">
                                     <div class="form-group">
-                                        <label>Email</label>
+                                        <label class="mb-1">Email</label>
                                         <input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email" [(ngModel)]="username"/>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
+                                    <div class="form-group mt-3">
+                                        <label class="mb-1">Password</label>
                                         <input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password"  [(ngModel)]="password" />
                                         <!-- <small>
                                             <a href="pages-reset-password.html">Forgot password?</a>
