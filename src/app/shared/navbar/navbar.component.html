@@ -1,29 +1,36 @@
-<nav class="navbar  navbar-expand navbar-theme">
-
-  <a class="sidebar-toggle d-flex mr-2">
-    <i class="hamburger align-self-center"></i>
-  </a>
-
-  <!-- <form class="form-inline d-none d-sm-inline-block">
-    <input class="form-control form-control-lite" type="text" placeholder="Buscar panel... ">
-  </form> -->
-
-  <div class="navbar-collapse collapse">
-    <ul class="navbar-nav ml-auto">
-      
-      <li class="nav-item dropdown ml-lg-2">
-        <a class="nav-link dropdown-toggle position-relative" href="#" id="userDropdown" data-toggle="dropdown">
-          <i class="align-middle fas fa-cog"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#"><i class="align-middle mr-1 fas fa-fw fa-user"></i> View Profile</a>
-         
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="signOut()"[routerLink]="['']" >
-            <i class="align-middle mr-1 fas fa-fw fa-arrow-alt-circle-right" ></i> Sign out</a>
-        </div>
-      </li>
-    </ul>
+<header class="header-area header-sticky">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                  <!-- ***** Logo Start ***** -->
+                  <a href="index.html" class="logo">
+                      Lava
+                  </a>
+                  <!-- ***** Logo End ***** -->
+                  <!-- ***** Menu Start ***** -->
+                  <ul class="nav">
+                      <li class="scroll-to-section"><a href="#welcome" class="menu-item">Home</a></li>
+                      <li class="scroll-to-section"><a href="#about" class="menu-item">About</a></li>
+                      <li class="scroll-to-section"><a href="#testimonials" class="menu-item">Testimonials</a>
+                      </li>
+                      <li class="submenu">
+                          <a href="javascript:;">Drop Down</a>
+                          <ul>
+                              <li><a href="" class="menu-item">About Us</a></li>
+                              <li><a href="" class="menu-item">Features</a></li>
+                              <li><a href="" class="menu-item">FAQ's</a></li>
+                              <li><a href="" class="menu-item">Blog</a></li>
+                          </ul>
+                      </li>
+                      <li class="scroll-to-section"><a href="#contact-us" class="menu-item">Contact Us</a></li>
+                  </ul>
+                  <a class='menu-trigger'>
+                      <span>Menu</span>
+                  </a>
+                  <!-- ***** Menu End ***** -->
+              </nav>
+          </div>
+      </div>
   </div>
-
-</nav>
+</header>
