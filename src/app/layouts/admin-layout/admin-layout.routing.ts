@@ -4,6 +4,7 @@ import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
 import { LoginComponent } from 'src/app/pages/login/login.component';
 import { AdminDashboardComponent } from 'src/app/pages/admin-dashboard/admin-dashboard.component';
 import { RestaurantsListComponent } from 'src/app/pages/admin-dashboard/restaurants-list/restaurants-list.component';
+import { CardEditComponent } from 'src/app/pages/admin-dashboard/card-edit/card-edit.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -25,9 +26,13 @@ export const AdminLayoutRoutes: Routes = [
         component: AdminDashboardComponent,
         children: [
             {
-          path: '',
-          component: RestaurantsListComponent
-      }
+            path: '',
+            component: RestaurantsListComponent
+            },
+            {
+                path: 'card-edit',
+                component: CardEditComponent
+            }
     ]
       },
 

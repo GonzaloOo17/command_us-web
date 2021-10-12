@@ -16,13 +16,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Cookie } from "ng2-cookies";
 import { CardEditComponent } from './pages/admin-dashboard/card-edit/card-edit.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminLayoutComponent,
-    CardEditComponent
+    CardEditComponent,
+    FooterComponent
    
    
   ],

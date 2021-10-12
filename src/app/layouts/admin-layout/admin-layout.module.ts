@@ -9,6 +9,7 @@ import { DashboardComponent }       from '../../pages/dashboard/dashboard.compon
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminDashboardComponent } from 'src/app/pages/admin-dashboard/admin-dashboard.component';
 import { RestaurantsListComponent } from 'src/app/pages/admin-dashboard/restaurants-list/restaurants-list.component';
+import { FooterComponent } from 'src/app/shared/footer/footer.component';
 
 
 @NgModule({
