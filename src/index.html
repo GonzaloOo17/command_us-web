@@ -1,48 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>CommandUs</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" type="text/css" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 
-   <!-- Additional CSS Files -->
-   <!-- <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css"> -->
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-   <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <title>Klassy Cafe - Restaurant HTML Template</title>
+<!--
 
-   <link rel="stylesheet" type="text/css" href="assets/css/templatemo-lava.css">
+TemplateMo 558 Klassy Cafe
 
-   <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
+https://templatemo.com/tm-558-klassy-cafe
 
-	<!-- <link href="./assets/css/modern.css" rel="stylesheet"> --> 
-  <!-- <script src="./assets/js/app.js"></script>
-  <script src="./assets/js/settings.js"></script> -->
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
-  <!-- jQuery -->
-  <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
-  <!-- Bootstrap -->
-  <script src="assets/js/popper.js"></script>
-  
+    <link rel="stylesheet" href="assets/css/templatemo-klassy-cafe.css">
 
-  <!-- Plugins -->
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/scrollreveal.min.js"></script>
-  <script src="assets/js/waypoints.min.js"></script>
-  <script src="assets/js/jquery.counterup.min.js"></script>
-  <script src="assets/js/imgfix.min.js"></script>
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
-  <!-- Global Init -->
-  <script src="assets/js/custom.js"></script>
-  <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
-</head>
-<body>
-  <app-root></app-root>
-</body>
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+
+            });
+        });
+
+    </script>
+
+    </head>
+    <body>
+<app-root>
+
+</app-root>
+
+    </body>
 </html>
