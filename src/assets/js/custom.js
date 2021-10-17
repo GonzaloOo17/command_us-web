@@ -27,13 +27,13 @@
 	  })
 	});
 
-	var $grid = $(".grid").isotope({
+	var $grid = $(".grid")?$(".grid").isotope({
 	  itemSelector: ".all",
 	  percentPosition: true,
 	  masonry: {
 	    columnWidth: ".all"
 	  }
-	})
+	}):null
 
 	$(".Modern-Slider").slick({
 	    autoplay:true,
