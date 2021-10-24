@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // baseUrl: 'http://viaris.orbis.com.es/orbis_iot/api_test'
-  baseUrl: 'http://188.208.218.22:8080'
+  baseUrl: 'http://82.223.46.192:4060/command_us/api'
 };
 
 /*

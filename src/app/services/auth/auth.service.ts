@@ -27,7 +27,7 @@ export class AuthService {
         email : username,
         password : password
       }
-           return this._http.post<Login>(this.url+'/api/users/login', this.body,);    
+           return this._http.post<Login>(this.url+'/user/login', this.body,);    
   }
 
   setUsurioLogueado(usuario : Login){
@@ -41,11 +41,6 @@ export class AuthService {
     
     console.log( Cookie.get('usuarioRegistrado'));
     return Cookie.get('usuarioRegistrado');
-  }
-
-  getAllUsers(){
-    return this._http.get<GetAllUsers>(this.url+'/api/users');
-
   }
 }
 

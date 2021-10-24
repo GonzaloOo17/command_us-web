@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Cookie } from "ng2-cookies";
 import { CardEditComponent } from './pages/admin-dashboard/card-edit/card-edit.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { LoadingModalComponent } from './components/ui/loading-modal/loading-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     LoginComponent,
     AdminLayoutComponent,
     CardEditComponent,
-    FooterComponent
+    FooterComponent,
+    LoadingModalComponent
    
    
   ],

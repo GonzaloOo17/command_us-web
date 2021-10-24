@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Cookie } from 'ng2-cookies';
-import { Panel, Sensor,   GetPanels, GetSensors, SensorsByPanel } from 'src/app/interfaces/interfaces';
-import { PanelsService} from '../../services/panels/panels.service';
 import { Router } from '@angular/router';
 
 
@@ -20,7 +17,7 @@ export class DashboardComponent implements OnInit{
         
     }
 	
-	constructor (	private servicioPanels : PanelsService, private router : Router){}
+	constructor ( private router : Router){}
 	
 
 	
