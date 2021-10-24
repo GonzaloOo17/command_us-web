@@ -18,6 +18,7 @@ import { Cookie } from "ng2-cookies";
 import { CardEditComponent } from './pages/admin-dashboard/card-edit/card-edit.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LoadingModalComponent } from './components/ui/loading-modal/loading-modal.component';
+import { RestaurantAddComponent } from './pages/admin-dashboard/restaurant-add/restaurant-add.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoadingModalComponent } from './components/ui/loading-modal/loading-mod
     AdminLayoutComponent,
     CardEditComponent,
     FooterComponent,
-    LoadingModalComponent
+    LoadingModalComponent,
+    RestaurantAddComponent
    
    
   ],

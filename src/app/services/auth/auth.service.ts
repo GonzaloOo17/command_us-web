@@ -34,6 +34,7 @@ export class AuthService {
     console.log(data.token)
     this.token = data.token;
     Cookie.set('user_token', data.token);
+    sessionStorage.setItem('email', data.email);
   }
 
   getToken(){
