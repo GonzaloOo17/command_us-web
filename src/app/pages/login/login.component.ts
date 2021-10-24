@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingModalComponent } from 'src/app/components/ui/loading-modal/loading-modal.component';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   loadingModal: NgbModalRef;
 
-  constructor(private _auth: AuthService
+  constructor(private _auth: AuthService, private _user: UserService
               , private router : Router, private _modal: NgbModal) { }
 
   ngOnInit(): void {
@@ -34,9 +35,15 @@ export class LoginComponent implements OnInit {
 
     this._auth.login(this.username,this.password)
       .subscribe( (data) => {
-      this.loadingModal.close();
-      this.router.navigate(['./admin']);
+      
+      this._user.setActiveUser(this.username);
+      this._auth.setLoggedUser(data);
+      this._user.reloadHeaders();
       console.log(data);
+      setTimeout(() => {
+        this.loadingModal.close();
+        this.router.navigate(['./admin']);
+      }, 500);
 
     },
     (error) => {

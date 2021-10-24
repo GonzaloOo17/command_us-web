@@ -17,7 +17,7 @@ export class AuthService {
     password : ""
   };
 
-  
+  token:any;
     
   constructor(private _http: HttpClient ) { }
 
@@ -30,18 +30,21 @@ export class AuthService {
            return this._http.post<Login>(this.url+'/user/login', this.body,);    
   }
 
-  setUsurioLogueado(usuario : Login){
+  setLoggedUser(data){
+    console.log(data.token)
+    this.token = data.token;
+    Cookie.set('user_token', data.token);
+  }
 
-    Cookie.set('usuarioRegistrado',usuario.user.name);
-    Cookie.set('token', usuario.token);
-    
+  getToken(){
+    return this.token;
   }
 
   getUsuarioLogueado(): any{
-    
     console.log( Cookie.get('usuarioRegistrado'));
     return Cookie.get('usuarioRegistrado');
   }
+
 }
 
 
