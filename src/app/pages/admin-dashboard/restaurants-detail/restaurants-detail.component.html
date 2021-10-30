@@ -1,0 +1,24 @@
+
+<div class="container mt-2">
+    <h1>
+        {{restaurant.name}}
+    </h1>
+    <p>{{restaurant.description}}</p>
+
+    <div class="container">
+        <h3>Cartas añadidas por el restaurante</h3>
+        <div class="mt-5 d-flex container flex-wrap justify-content-start">
+            <div class="card" routerLink="/admin/card-edit" *ngFor="let card of cards">
+                <h3 class="rest-name">{{card.name}}</h3>
+            </div>
+            <div class="card d-flex align-items-center justify-content-center" routerLink="/admin/card-edit">
+                <svg style="width:88px;height:88px" class="text-grey" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                </svg>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+

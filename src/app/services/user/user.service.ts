@@ -45,4 +45,11 @@ export class UserService {
     return this._http.post<any>(this.url+'/user/' + this.user + '/restaurant', restaurant, {headers: this.headers});
   }
 
+  getCardsByRestaurant(restaurant){
+    return this._http.get<any>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant + '/card', {headers: this.headers});
+  }
+  getRestaurantById(restaurant){
+    return this._http.get<any>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant, {headers: this.headers});
+  }
+
 }

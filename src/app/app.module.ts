@@ -19,6 +19,7 @@ import { CardEditComponent } from './pages/admin-dashboard/card-edit/card-edit.c
 import { FooterComponent } from './shared/footer/footer.component';
 import { LoadingModalComponent } from './components/ui/loading-modal/loading-modal.component';
 import { RestaurantAddComponent } from './pages/admin-dashboard/restaurant-add/restaurant-add.component';
+import { RestaurantsDetailComponent } from './pages/admin-dashboard/restaurants-detail/restaurants-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RestaurantAddComponent } from './pages/admin-dashboard/restaurant-add/r
     CardEditComponent,
     FooterComponent,
     LoadingModalComponent,
-    RestaurantAddComponent
+    RestaurantAddComponent,
+    RestaurantsDetailComponent
    
    
   ],

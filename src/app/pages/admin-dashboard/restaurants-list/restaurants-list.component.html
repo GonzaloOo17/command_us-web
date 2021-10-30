@@ -1,5 +1,5 @@
-<div class="mt-5 d-flex">
-    <div class="card" routerLink="/admin/card-edit" *ngFor="let restaurant of restaurants">
+<div class="mt-5 d-flex container flex-wrap justify-content-start">
+    <div class="card" [routerLink]="['/admin/restaurant-detail', restaurant.id]" *ngFor="let restaurant of restaurants">
         <h3 class="rest-name">{{restaurant.name}}</h3>
         <p class="localization">
             Moratalaz, Madrid

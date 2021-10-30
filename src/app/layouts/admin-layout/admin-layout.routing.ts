@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from 'src/app/pages/admin-dashboard/admin-das
 import { RestaurantsListComponent } from 'src/app/pages/admin-dashboard/restaurants-list/restaurants-list.component';
 import { CardEditComponent } from 'src/app/pages/admin-dashboard/card-edit/card-edit.component';
 import { RestaurantAddComponent } from 'src/app/pages/admin-dashboard/restaurant-add/restaurant-add.component';
+import { RestaurantsDetailComponent } from 'src/app/pages/admin-dashboard/restaurants-detail/restaurants-detail.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -37,19 +38,11 @@ export const AdminLayoutRoutes: Routes = [
             {
                 path: 'card-edit',
                 component: CardEditComponent
+            },
+            {
+                path: 'restaurant-detail/:id',
+                component: RestaurantsDetailComponent
             }
     ]
       },
-
-    // {
-    //     path: '**',
-    //     redirectTo: 'dashboard'
-    //   }
-    // { path: 'user',           component: UserComponent },
-    // { path: 'table',          component: TableComponent },
-    // { path: 'typography',     component: TypographyComponent },
-    // { path: 'icons',          component: IconsComponent },
-    // { path: 'maps',           component: MapsComponent },
-    // { path: 'notifications',  component: NotificationsComponent },
-    // { path: 'upgrade',        component: UpgradeComponent }
 ];

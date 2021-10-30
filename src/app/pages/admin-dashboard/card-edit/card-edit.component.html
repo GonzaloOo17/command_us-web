@@ -1,15 +1,48 @@
-<div class="mt-5">
-    <div class="category">
-        <h3 class="mb-3">Categoría</h3>
-        <div class="row">
-            <div class="col-6">
-                Nombre proddducto
+<div class="container mt-5">
+    <p>Por favor, añada los productos de su carta</p>
+    <div class="container mb-3">
+        <div class="category" *ngFor="let category of card, let j = index">
+            <hr>
+            <h3 class="mb-3 d-flex col-6">
+                <label class="col-6" for="">Categoría</label>
+                <input type="text" class="col-6" class="form-control" name="categoryName" placeholder="Category name" [(ngModel)]="category.name">
+            </h3>
+            <hr>
+            <div class="row mb-2">
+                <div class="col-6">
+                    Nombre proddducto
+                </div>
+                <div class="col-3">Precio  €</div>
+                <div class="col-3">
+                    Acciones
+                </div>
             </div>
-            <div class="col-3">Precio  €</div>
-            <div class="col-3">
-                Acciones
+            <div class="row my-2" *ngFor="let product of category.products, let i = index">
+                <div class="col-6">
+                    <input type="text" class="form-control" name="nameProd{{i}}" [(ngModel)]="product.name">
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control" name="priceProd{{i}}" [(ngModel)]="product.price">
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        
+            <div class="row d-flex justify-content-end">
+                <button class="btn btn-outline border-primary" (click)="clickAddProduct(category.name)">
+                    +
+                </button>
             </div>
         </div>
+        
+        <button class="btn btn-secondary mt-3" (click)="clickAddCategory()">
+            Añadir categoría
+        </button>
     </div>
+    
+    <button class="btn btn-primary mt-3" (click)="save()">
+        Guardar
+    </button>
     
 </div>
