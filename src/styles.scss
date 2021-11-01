@@ -128,10 +128,12 @@ $ring-light:  #14e48d;
 }
 
 .card{
+    margin: 0px;
     max-width: 33%;
     border-radius: 30px;
     padding: 30px;
-    width: 33%;
+    width: 32%;
+    min-height: 250px;
     -webkit-box-shadow: 10px 10px 29px 2px rgba(158,158,158,0.5);
     -moz-box-shadow: 10px 10px 29px 2px rgba(158,158,158,0.5);
     box-shadow: 10px 10px 29px 2px rgba(158,158,158,0.5);
@@ -200,8 +202,20 @@ $ring-light:  #14e48d;
 }
 
 .main-nav{
-    height: 80px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.background-main-nav{
+    background: rgb(251,178,11) !important;
+    background: linear-gradient(43deg, rgba(251,178,11,1) 0%, rgba(0,254,215,1) 100%) !important;
+}
+
+.main-nav .nav{
+    margin-top: 0px !important;
 }
 
 

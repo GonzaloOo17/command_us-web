@@ -18,6 +18,8 @@ export class AuthService {
   };
 
   token:any;
+
+  isLogged: boolean;
     
   constructor(private _http: HttpClient ) { }
 
@@ -31,7 +33,6 @@ export class AuthService {
   }
 
   setLoggedUser(data){
-    console.log(data.token)
     this.token = data.token;
     Cookie.set('user_token', data.token);
     sessionStorage.setItem('email', data.email);
@@ -42,8 +43,11 @@ export class AuthService {
   }
 
   getUsuarioLogueado(): any{
-    console.log( Cookie.get('usuarioRegistrado'));
-    return Cookie.get('usuarioRegistrado');
+    return Cookie.get('user_token');
+  }
+
+  isLoggedIn(){
+    return this.isLogged;
   }
 
 }

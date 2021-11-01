@@ -7,6 +7,7 @@ import { RestaurantsListComponent } from 'src/app/pages/admin-dashboard/restaura
 import { CardEditComponent } from 'src/app/pages/admin-dashboard/card-edit/card-edit.component';
 import { RestaurantAddComponent } from 'src/app/pages/admin-dashboard/restaurant-add/restaurant-add.component';
 import { RestaurantsDetailComponent } from 'src/app/pages/admin-dashboard/restaurants-detail/restaurants-detail.component';
+import { AuthGuard } from 'src/app/services/guards/auth.guard';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -26,6 +27,7 @@ export const AdminLayoutRoutes: Routes = [
     {
         path: 'admin',
         component: AdminDashboardComponent,
+        canActivate: [AuthGuard],
         children: [
             {
             path: '',
@@ -40,8 +42,12 @@ export const AdminLayoutRoutes: Routes = [
                 component: CardEditComponent
             },
             {
-                path: 'restaurant-detail/:id',
+                path: 'restaurant-detail/:restaurantId',
                 component: RestaurantsDetailComponent
+            },
+            {
+                path: 'restaurant-detail/:restaurantId/card-edit/:cardId',
+                component: CardEditComponent
             }
     ]
       },

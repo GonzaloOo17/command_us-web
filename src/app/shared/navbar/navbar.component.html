@@ -6,9 +6,9 @@
   <div class="container">
       <div class="row">
           <div class="col-12">
-              <nav class="main-nav">
+              <nav class="main-nav background-main-nav">
                   <!-- ***** Logo Start ***** -->
-                  <a href="index.html" class="logo logo-navbar h-100">
+                  <a href="index.html" class="logo logo-navbar h-100" style="width: 200px;">
                       <img src="/assets/img/CU/CU-logo_dark.png" class="w-100 h-100">
                   </a>
                   <!-- ***** Logo End ***** -->
@@ -28,9 +28,9 @@
                       </li>
                   -->
                       <li class="scroll-to-section"><a href="#menu">Menu</a></li>
-                      <li class="scroll-to-section" routerLink="/login"><a>Log in</a></li>
-                      <li class="submenu">
-                          <a href="javascript:;">My CU</a>
+                      <li class="scroll-to-section btn btn-primary py-0" *ngIf="!this._auth.getUsuarioLogueado()" routerLink="/login"><a>Log in</a></li>
+                      <li class="submenu" *ngIf="this._auth.getUsuarioLogueado()">
+                          <a class="btn btn-primary py-0">My CU</a>
                           <ul>
                               <li><a routerLink="/admin">Restaurants</a></li>
                               <li><a href="#">Profile</a></li>
