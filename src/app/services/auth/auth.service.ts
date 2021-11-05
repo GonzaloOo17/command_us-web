@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { GetAllUsers, Login } from 'src/app/interfaces/interfaces';
 import { Cookie } from 'ng2-cookies/ng2-cookies';
@@ -29,7 +29,7 @@ export class AuthService {
         email : username,
         password : password
       }
-           return this._http.post<Login>(this.url+'/user/login', this.body,);    
+           return this._http.post<Login>(this.url+'/user/login', this.body, { headers: new HttpHeaders({'Authorization': 'Basic Z29uemFsbzpjb21tYW5kX3Vz'})});    
   }
 
   setLoggedUser(data){
@@ -48,6 +48,10 @@ export class AuthService {
 
   isLoggedIn(){
     return this.isLogged;
+  }
+
+  logOut(){
+    Cookie.delete('user_token')
   }
 
 }

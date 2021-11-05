@@ -57,4 +57,8 @@ export class UserService {
     return this._http.get<any>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant, {headers: this.headers});
   }
 
+  saveCard(restaurant, cardId, card){
+    return this._http.put<any>(this.url+'/user/' + this.user + '/restaurant/' + restaurant + '/card/' + cardId + '/meals', card, {headers: this.headers});
+  }
+
 }

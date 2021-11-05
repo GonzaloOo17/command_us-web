@@ -1,0 +1,16 @@
+.preloader-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 30vw;
+}
+
+.preloader-2{
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    background-color: yellow;
+    height: 100% !important;
+    width: 100% !important;
+}

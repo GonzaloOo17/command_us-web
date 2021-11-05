@@ -1,7 +1,7 @@
 // Theme variables
 @import "./assets/scss/1-variables/_app.scss";
 
-$primary: #00778B;
+$primary: #fba70b;
 $blue:    #5C59ED;
 $indigo:  #3f51b5;
 $purple:  #a877b5;
@@ -23,6 +23,16 @@ $ring-light:  #14e48d;
 
 .text-accent{
 	color: #87fcfc !important;
+}
+
+
+.main{
+    margin-top: -100px;
+}
+
+.section-heading h6{
+    color: $primary;
+    font-size: 18px;
 }
 
 .btn-primary{
@@ -139,6 +149,10 @@ $ring-light:  #14e48d;
     box-shadow: 10px 10px 29px 2px rgba(158,158,158,0.5);
 }
 
+p{
+    font-size: 16px !important;
+}
+
 .button-compound{
     border-radius: 5px;
     overflow: hidden;
@@ -210,14 +224,30 @@ $ring-light:  #14e48d;
 }
 
 .background-main-nav{
-    background: rgb(251,178,11) !important;
-    background: linear-gradient(43deg, rgba(251,178,11,1) 0%, rgba(0,254,215,1) 100%) !important;
+    background: rgb(253, 201, 79) !important;
+    background: linear-gradient(43deg, rgba(251,178,11,1) 0%, rgba(255,143,114,1) 100%) !important;
+}
+
+.preloader{
+    background: rgb(253, 201, 79) !important;
+    background: linear-gradient(43deg, rgba(251,178,11,1) 0%, rgba(255,143,114,1) 100%) !important;
+}
+
+.modal-backdrop{
+    background-color: rgb(223, 214, 205);
 }
 
 .main-nav .nav{
     margin-top: 0px !important;
 }
 
+.background-header{
+    box-shadow: none !important;
+}
+
+.background-white{
+    background-color: white !important;
+}
 
 .header-area{
     position: static !important;

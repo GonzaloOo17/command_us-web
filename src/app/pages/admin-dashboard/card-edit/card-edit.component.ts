@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { LoadingModalComponent } from 'src/app/components/ui/loading-modal/loading-modal.component';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -14,7 +16,9 @@ export class CardEditComponent implements OnInit {
   restaurant: string;
   cardId: string;
 
-  constructor(private _user: UserService, private _route: ActivatedRoute) { }
+  modalLoad: NgbModalRef;
+
+  constructor(private _user: UserService, private _route: ActivatedRoute, private _modal: NgbModal) { }
 
   ngOnInit(): void {
     this.cardId = this._route.snapshot.params.cardId;
@@ -25,6 +29,8 @@ export class CardEditComponent implements OnInit {
         console.log(data);
         this.card=data.products;
       });
+
+    this.modalLoad=this._modal.open(LoadingModalComponent);
   }
 
   addCategory(){
@@ -49,6 +55,11 @@ export class CardEditComponent implements OnInit {
 
   save(){
     console.log(this.card);
+    this._user.saveCard(this.restaurant, this.cardId, this.card)
+      .subscribe(data=>{
+        console.log(data);
+
+      });
   }
 
 }

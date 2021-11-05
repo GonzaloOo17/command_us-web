@@ -6,7 +6,7 @@
   <div class="container">
       <div class="row">
           <div class="col-12">
-              <nav class="main-nav background-main-nav">
+              <nav class="main-nav" [ngClass]="{'background-main-nav': !navbarWhite, 'background-white': navbarWhite}">
                   <!-- ***** Logo Start ***** -->
                   <a href="index.html" class="logo logo-navbar h-100" style="width: 200px;">
                       <img src="/assets/img/CU/CU-logo_dark.png" class="w-100 h-100">
@@ -34,7 +34,7 @@
                           <ul>
                               <li><a routerLink="/admin">Restaurants</a></li>
                               <li><a href="#">Profile</a></li>
-                              <li><a href="#">Log out</a></li>
+                              <li><a href="#" (click)="this._auth.logOut()">Log out</a></li>
                     
                           </ul>
                       </li>
