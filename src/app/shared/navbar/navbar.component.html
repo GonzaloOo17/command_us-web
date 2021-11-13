@@ -1,53 +1,65 @@
 
-
-
-<!-- ***** Header Area Start ***** -->
 <header class="header-area header-sticky">
   <div class="container">
       <div class="row">
           <div class="col-12">
-              <nav class="main-nav" [ngClass]="{'background-main-nav': !navbarWhite, 'background-white': navbarWhite}">
-                  <!-- ***** Logo Start ***** -->
-                  <a href="index.html" class="logo logo-navbar h-100" style="width: 200px;">
+              <!-- <nav class="main-nav navbar navbar-expand-lg" [ngClass]="{'background-main-nav': !navbarWhite, 'background-white': navbarWhite}">
+                  <a href="index.html" class="navbar-brand h-100" style="width: 200px;">
                       <img src="/assets/img/CU/CU-logo_dark.png" class="w-100 h-100">
                   </a>
-                  <!-- ***** Logo End ***** -->
-                  <!-- ***** Menu Start ***** -->
-                  <ul class="nav">
-                      <li class="scroll-to-section"><a routerLink="/home" class="active">Home</a></li>
-                      <li class="scroll-to-section"><a href="#about">About</a></li>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item"><a routerLink="/home" class="active nav-link">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                        <li class="nav-item btn btn-primary py-0" *ngIf="!this._auth.getUsuarioLogueado()" routerLink="/login"><a class="nav-link">Log in</a></li>
+                        <li class="nav-item submenu" *ngIf="this._auth.getUsuarioLogueado()">
+                            <a class="btn btn-primary py-0 nav-link">My CU</a>
+                            <ul>
+                                <li><a routerLink="/admin">Restaurants</a></li>
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#" (click)="this._auth.logOut()">Log out</a></li>
+                      
+                            </ul>
+                        </li>
+                        <li class="nav-item scroll-to-section"><a href="#reservation">Contact Us</a></li>
+                    </ul>
+                  </div>
+                  <button class='navbar-toggler' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+              </nav> -->
 
-                  <!--
-                      <li class="submenu">
-                          <a href="javascript:;">Drop Down</a>
-                          <ul>
-                              <li><a href="#">Drop Down Page 1</a></li>
-                              <li><a href="#">Drop Down Page 2</a></li>
-                              <li><a href="#">Drop Down Page 3</a></li>
-                          </ul>
-                      </li>
-                  -->
-                      <li class="scroll-to-section"><a href="#menu">Menu</a></li>
-                      <li class="scroll-to-section btn btn-primary py-0" *ngIf="!this._auth.getUsuarioLogueado()" routerLink="/login"><a>Log in</a></li>
-                      <li class="submenu" *ngIf="this._auth.getUsuarioLogueado()">
-                          <a class="btn btn-primary py-0">My CU</a>
-                          <ul>
-                              <li><a routerLink="/admin">Restaurants</a></li>
-                              <li><a href="#">Profile</a></li>
-                              <li><a href="#" (click)="this._auth.logOut()">Log out</a></li>
-                    
-                          </ul>
-                      </li>
-                      <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                      <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
+
+              <nav class="main-nav navbar navbar-expand-lg navbar-light" [ngClass]="{'background-main-nav': !navbarWhite, 'background-white': navbarWhite}">
+                <a href="index.html" class="navbar-brand h-100" style="width: 200px;">
+                    <img src="/assets/img/CU/CU-logo_dark.png" class="w-100 h-100">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse d-flex justify-content-md-end justify-content-center" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                    <li class="nav-item"><a routerLink="/home" class="active nav-link">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                        <li class="nav-item btn btn-primary py-0" *ngIf="!this._auth.getUsuarioLogueado()" routerLink="/login"><a class="nav-link">Log in</a></li>
+                        <li class="nav-item dropdown" *ngIf="this._auth.getUsuarioLogueado()">
+                            <a class="btn btn-primary py-0 nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My CU</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" routerLink="/admin">Restaurants</a>
+                                <a class="dropdown-item">Profile</a>
+                                <a class="dropdown-item" href="#" (click)="this._auth.logOut()">Log out</a>
+                      
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#reservation">Contact Us</a></li>
                   </ul>
-                  <a class='menu-trigger'>
-                      <span>Menu</span>
-                  </a>
-                  <!-- ***** Menu End ***** -->
+                  
+                </div>
               </nav>
           </div>
       </div>
   </div>
 </header>
-<!-- ***** Header Area End ***** -->

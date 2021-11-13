@@ -8,6 +8,9 @@ import { CardEditComponent } from 'src/app/pages/admin-dashboard/card-edit/card-
 import { RestaurantAddComponent } from 'src/app/pages/admin-dashboard/restaurant-add/restaurant-add.component';
 import { RestaurantsDetailComponent } from 'src/app/pages/admin-dashboard/restaurants-detail/restaurants-detail.component';
 import { AuthGuard } from 'src/app/services/guards/auth.guard';
+import { CardClientComponent } from 'src/app/pages/card-client/card-client.component';
+import { CardAddComponent } from 'src/app/pages/admin-dashboard/card-add/card-add.component';
+import { RegisterComponent } from 'src/app/pages/register/register.component';
 
 export const AdminLayoutRoutes: Routes = [
     {
@@ -21,8 +24,16 @@ export const AdminLayoutRoutes: Routes = [
 
     },
     {
+        path: 'card/:restaurantId/:cardId',
+        component: CardClientComponent 
+    },
+    {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       },
     {
         path: 'admin',
@@ -36,6 +47,10 @@ export const AdminLayoutRoutes: Routes = [
             {
                 path: 'add-restaurant',
                 component: RestaurantAddComponent
+            },
+            {
+                path: 'add-card/:restaurantId',
+                component: CardAddComponent
             },
             {
                 path: 'card-edit',

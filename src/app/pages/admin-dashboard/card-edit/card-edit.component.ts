@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgbModal, NgbModalModule, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingModalComponent } from 'src/app/components/ui/loading-modal/loading-modal.component';
+import { SuccessmodalComponent } from 'src/app/components/ui/successmodal/successmodal.component';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -17,8 +18,9 @@ export class CardEditComponent implements OnInit {
   cardId: string;
 
   modalLoad: NgbModalRef;
+  successModal: NgbModalRef;
 
-  constructor(private _user: UserService, private _route: ActivatedRoute, private _modal: NgbModal) { }
+  constructor(private _user: UserService, private _route: ActivatedRoute, private _modal: NgbModal, private _router: Router) { }
 
   ngOnInit(): void {
     this.cardId = this._route.snapshot.params.cardId;
@@ -30,7 +32,7 @@ export class CardEditComponent implements OnInit {
         this.card=data.products;
       });
 
-    this.modalLoad=this._modal.open(LoadingModalComponent);
+    
   }
 
   addCategory(){
@@ -58,7 +60,11 @@ export class CardEditComponent implements OnInit {
     this._user.saveCard(this.restaurant, this.cardId, this.card)
       .subscribe(data=>{
         console.log(data);
-
+        this.successModal = this._modal.open(SuccessmodalComponent);
+        setTimeout(() => {
+          this.successModal.close();
+          this._router.navigate(['/admin/restaurant-detail', this.restaurant]);
+        }, 1500);
       });
   }
 

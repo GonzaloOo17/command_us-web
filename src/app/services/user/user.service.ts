@@ -53,12 +53,24 @@ export class UserService {
     return this._http.get<any>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant + '/card/' + cardId, {headers: this.headers});
   }
 
+  getCardQR(restaurant, cardId){
+    return this._http.get<any>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant + '/card/' + cardId + '/qr', {headers: this.headers});
+  }
+
+  getCardById_Client(restaurant, cardId){
+    return this._http.get<any>(this.url+ '/restaurant/' +  restaurant + '/card/' + cardId, {headers: this.headers});
+  }
+
   getRestaurantById(restaurant){
     return this._http.get<any>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant, {headers: this.headers});
   }
 
   saveCard(restaurant, cardId, card){
     return this._http.put<any>(this.url+'/user/' + this.user + '/restaurant/' + restaurant + '/card/' + cardId + '/meals', card, {headers: this.headers});
+  }
+
+  createCard(restaurant, card){
+    return this._http.post<any>(this.url+'/user/' + this.user + '/restaurant/' + restaurant + '/card', card, {headers: this.headers});
   }
 
 }

@@ -3,7 +3,7 @@
     <div class="container mb-3">
         <div class="category" *ngFor="let category of card, let j = index">
             <hr>
-            <h3 class="mb-3 d-flex col-6">
+            <h3 class="mb-3 d-flex col-md-6">
                 <label class="col-6" for="">Categoría</label>
                 <input type="text" class="col-6" class="form-control" name="categoryName" placeholder="Category name" [(ngModel)]="category.name">
             </h3>

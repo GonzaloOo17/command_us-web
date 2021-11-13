@@ -132,7 +132,7 @@ $ring-light:  #14e48d;
 }
 
 .main-nav{
-    
+    z-index: 1000;
     border-radius: 20px;
     padding: 0px 30px;
 }
@@ -215,13 +215,14 @@ p{
     border-top-right-radius: 5px;   
 }
 
-.main-nav{
+.main-nav, .navbar{
     margin-top: 10px;
     padding-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 }
+
 
 .background-main-nav{
     background: rgb(253, 201, 79) !important;
@@ -556,3 +557,10 @@ $multiplier: 0.75;
   .switch-sm .slider.round:before {
     border-radius: 50%;
   }
+
+  @media (max-width: 576px){
+    .card{
+        width: 100% !important;
+        max-width: 100%;
+    }
+}

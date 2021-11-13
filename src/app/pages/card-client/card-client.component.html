@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <h1>Carta del restaurante</h1>
+    <div class="container mb-3 mt-2">
+        <div class="category" *ngFor="let category of card, let j = index">
+            <hr>
+            <h3 class="mb-3 d-flex col-6">
+                
+                {{category.name}}
+            </h3>
+            <hr>
+            
+            <div class="row my-2" *ngFor="let product of category.products, let i = index">
+                <div class="col-6">
+                    {{product.name}}
+                </div>
+                <div class="col-3">
+                    {{product.price}} €
+                </div>
+                <!-- <div class="col-3">
+                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                </div> -->
+            </div>
+        
+            <!-- <div class="row d-flex justify-content-end">
+                <button class="btn btn-outline border-primary">
+                    +
+                </button>
+            </div> -->
+        </div>
+        
+        <!-- <button class="btn btn-secondary mt-3">
+            Añadir categoría
+        </button> -->
+    </div>
+    
+    <!-- <button class="btn btn-primary mt-3">
+        Guardar
+    </button> -->
+    
+</div>

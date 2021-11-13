@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <h6>Por favor, complete los campos para añadir una nueva carta</h6>
+    <div class="form-group mt-5">
+        <div class="col-6">
+            <label for="">Nombre</label>
+        </div>
+        <div class="col-6">
+            <input type="text" class="form-control" name="name" [(ngModel)]="card.name">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-6">
+            <label for="">Descripción</label>
+        </div>
+        <div class="col-6">
+            <input type="text" class="form-control" name="description" [(ngModel)]="card.description">
+        </div>
+    </div>
+    
+    <button class="btn btn-primary" (click)="save()">
+        Crear
+    </button>
+    
+</div>

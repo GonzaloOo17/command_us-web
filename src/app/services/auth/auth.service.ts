@@ -32,6 +32,10 @@ export class AuthService {
            return this._http.post<Login>(this.url+'/user/login', this.body, { headers: new HttpHeaders({'Authorization': 'Basic Z29uemFsbzpjb21tYW5kX3Vz'})});    
   }
 
+  register(user: any){    
+    return this._http.post<any>(this.url+'/user', user, { headers: new HttpHeaders({'Authorization': 'Basic Z29uemFsbzpjb21tYW5kX3Vz'})});    
+}
+
   setLoggedUser(data){
     this.token = data.token;
     Cookie.set('user_token', data.token);

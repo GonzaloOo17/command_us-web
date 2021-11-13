@@ -11,7 +11,8 @@ export class RestaurantsDetailComponent implements OnInit {
 
   cards: any[];
   restaurantId: string;
-
+  qrImg;
+  
   restaurant: any;
 
   constructor(private _user: UserService, private _route: ActivatedRoute) { }
@@ -29,6 +30,14 @@ export class RestaurantsDetailComponent implements OnInit {
       .subscribe(data=>{
         console.log(data);
         this.cards  = data;
+      })
+  }
+
+  getQR(card){
+    this._user.getCardQR(this.restaurantId, card)
+      .subscribe(data=>{
+        console.log(data);
+        this.qrImg=data.uri;
       })
   }
 

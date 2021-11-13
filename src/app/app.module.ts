@@ -20,6 +20,10 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LoadingModalComponent } from './components/ui/loading-modal/loading-modal.component';
 import { RestaurantAddComponent } from './pages/admin-dashboard/restaurant-add/restaurant-add.component';
 import { RestaurantsDetailComponent } from './pages/admin-dashboard/restaurants-detail/restaurants-detail.component';
+import { CardClientComponent } from './pages/card-client/card-client.component';
+import { CardAddComponent } from './pages/admin-dashboard/card-add/card-add.component';
+import { SuccessmodalComponent } from './components/ui/successmodal/successmodal.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { RestaurantsDetailComponent } from './pages/admin-dashboard/restaurants-
     FooterComponent,
     LoadingModalComponent,
     RestaurantAddComponent,
-    RestaurantsDetailComponent
+    RestaurantsDetailComponent,
+    CardClientComponent,
+    CardAddComponent,
+    SuccessmodalComponent,
+    RegisterComponent
    
    
   ],

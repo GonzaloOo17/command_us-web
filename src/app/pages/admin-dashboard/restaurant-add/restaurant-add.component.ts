@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
 import { Router } from '@angular/router';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { SuccessmodalComponent } from 'src/app/components/ui/successmodal/successmodal.component';
 
 @Component({
   selector: 'app-restaurant-add',
@@ -16,7 +18,9 @@ export class RestaurantAddComponent implements OnInit {
     type: ''
   }
 
-  constructor( private _user: UserService, private _router: Router) { }
+  successModal: NgbModalRef;
+
+  constructor( private _user: UserService, private _router: Router, private _modal: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +29,11 @@ export class RestaurantAddComponent implements OnInit {
     this._user.createRestaurant(this.restaurant)
       .subscribe(data=>{
         console.log(data);
-        this._router.navigate(['/admin']);
+        this.successModal = this._modal.open(SuccessmodalComponent);
+        setTimeout(() => {
+          this.successModal.close();
+          this._router.navigate(['/admin']);
+        }, 1500);
       })
   }
 
