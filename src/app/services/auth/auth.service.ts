@@ -40,6 +40,7 @@ export class AuthService {
     this.token = data.token;
     Cookie.set('user_token', data.token);
     sessionStorage.setItem('email', data.email);
+    sessionStorage.setItem('name', data.name);
   }
 
   getToken(){

@@ -1,0 +1,38 @@
+<div class="p-3">
+    <div class="modal-header">
+        Obtener QR
+    </div>
+    <div class="container modal-body">
+        <span>Por favor, indíquenos los comedores y el número de mesas de cada comedor:</span>
+
+        <div class="col-12 col-sm-10 m-auto">
+            <div class="row form-group mt-2 px-2">
+                <label for="" class="col-6">Número de comedores</label>
+                <input type="text" [(ngModel)]="nComedores" (keyup)="updatenComedores()">
+            </div>
+    
+            <div class="comedor" *ngFor="let comedor of comedores, let i=index">
+                <p class="text-bold">Comedor {{i+1}}</p>
+                <div class="d-flex">
+                    <label for="" class="col-6 sm-label">Nombre del comedor</label>
+                    <input class="form-control col-6" type="text" name="cName_{{i}}" [(ngModel)]="comedor.name">
+                </div>
+                <div class="d-flex">
+                    <label for="" class="col-6 sm-label">Número de mesas</label>
+                    <input class="form-control col-6" type="number" name="c.nMesas_{{i}}" [(ngModel)]="comedor.nMesas">
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary mt-2" (click)="getPDF()">
+            Generar PDF
+        </button>
+
+        <!-- <h4>
+            Aquí tiene el QR con el enlace a su carta:
+        </h4>
+        <div class="m-auto text-center">
+            <img [src]="qrImg" alt="">
+        </div> -->
+    </div>
+</div>

@@ -8,15 +8,15 @@
             Restaurante
         </div>
         <div class="card-body">
-            <h4 class="rest-name">{{restaurant.name}}</h4>
+            <h4 class="rest-name" role="button">{{restaurant.name}}</h4>
         <p class="localization">
-            Moratalaz, Madrid
+            {{restaurant.localization}}
         </p>
-        <span class="badge badge-primary">Carta añadida</span>
+        <span class="badge badge-primary">{{restaurant.type}}</span>
         </div>
         
     </div>
-    <div class="card d-flex align-items-center justify-content-center" routerLink="/admin/add-restaurant">
+    <div class="card d-flex align-items-center justify-content-center" routerLink="/admin/add-restaurant" role="button">
         <svg style="width:88px;height:88px" class="text-grey" viewBox="0 0 24 24">
             <path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
         </svg>

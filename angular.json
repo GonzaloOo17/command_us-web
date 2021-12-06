@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-orbis-iot": {
+    "command-us": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,20 +20,21 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-orbis-iot",
+            "outputPath": "dist/command-us",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/img",
+              "src/assets/img/CU"
+
             ],
             "styles": [
               "src/styles.scss"
-              
-              
-              
+ 
             ],
             "scripts": [
               
@@ -79,18 +80,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test-orbis-iot:build"
+            "browserTarget": "command-us:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test-orbis-iot:build:production"
+              "browserTarget": "command-us:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test-orbis-iot:build"
+            "browserTarget": "command-us:build"
           }
         },
         "test": {
@@ -128,18 +129,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test-orbis-iot:serve"
+            "devServerTarget": "command-us:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test-orbis-iot:serve:production"
+              "devServerTarget": "command-us:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "test-orbis-iot",
+  "defaultProject": "command-us",
   "cli": {
     "analytics": "c22ad70b-9bf4-489b-a570-1b9157f1da90"
   }

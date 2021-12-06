@@ -10,6 +10,8 @@ export class RestaurantsListComponent implements OnInit {
 
   restaurants: any[] = [];
 
+  
+
   constructor(private _user: UserService) { }
 
   ngOnInit(): void {
@@ -18,6 +20,8 @@ export class RestaurantsListComponent implements OnInit {
         console.log(data);
         this.restaurants=data;
       })
+
+    
   }
 
 }

@@ -24,6 +24,8 @@ import { CardClientComponent } from './pages/card-client/card-client.component';
 import { CardAddComponent } from './pages/admin-dashboard/card-add/card-add.component';
 import { SuccessmodalComponent } from './components/ui/successmodal/successmodal.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { GetQRModalComponent } from './components/ui/get-qr-modal/get-qr-modal.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { RegisterComponent } from './pages/register/register.component';
     CardClientComponent,
     CardAddComponent,
     SuccessmodalComponent,
-    RegisterComponent
+    RegisterComponent,
+    GetQRModalComponent
    
    
   ],
@@ -50,7 +53,9 @@ import { RegisterComponent } from './pages/register/register.component';
     NavbarModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -33,29 +33,31 @@
 
               <nav class="main-nav navbar navbar-expand-lg navbar-light" [ngClass]="{'background-main-nav': !navbarWhite, 'background-white': navbarWhite}">
                 <a href="index.html" class="navbar-brand h-100" style="width: 200px;">
-                    <img src="/assets/img/CU/CU-logo_dark.png" class="w-100 h-100">
+                    <img src="assets/img/CU/CU-logo_dark.png" class="w-100 h-100">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
               
-                <div class="collapse navbar-collapse d-flex justify-content-md-end justify-content-center" id="navbarSupportedContent">
-                  <ul class="navbar-nav">
-                    <li class="nav-item"><a routerLink="/home" class="active nav-link">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-                        <li class="nav-item btn btn-primary py-0" *ngIf="!this._auth.getUsuarioLogueado()" routerLink="/login"><a class="nav-link">Log in</a></li>
-                        <li class="nav-item dropdown" *ngIf="this._auth.getUsuarioLogueado()">
-                            <a class="btn btn-primary py-0 nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My CU</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" routerLink="/admin">Restaurants</a>
-                                <a class="dropdown-item">Profile</a>
-                                <a class="dropdown-item" href="#" (click)="this._auth.logOut()">Log out</a>
-                      
-                            </div>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#reservation">Contact Us</a></li>
-                  </ul>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                  <div class="d-flex w-100 justify-content-md-end justify-content-center">
+                    <ul class="navbar-nav">
+                      <li class="nav-item"><a routerLink="/home" class="nav-link">Home</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                          <li class="nav-item btn btn-primary py-0" *ngIf="!this._auth.getUsuarioLogueado()" routerLink="/login"><a class="nav-link">Log in</a></li>
+                          <li class="nav-item dropdown d-flex align-items-center" *ngIf="this._auth.getUsuarioLogueado()">
+                              <a class="btn btn-primary py-0 nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My CU</a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                  <a class="dropdown-item" routerLink="/admin">Restaurants</a>
+                                  <a class="dropdown-item">Profile</a>
+                                  <a class="dropdown-item" href="#" (click)="this._auth.logOut()">Log out</a>
+                        
+                              </div>
+                          </li>
+                          <li class="nav-item"><a class="nav-link" href="#reservation">Contact Us</a></li>
+                    </ul>
+                  </div>
                   
                 </div>
               </nav>

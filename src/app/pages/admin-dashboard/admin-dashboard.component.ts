@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
+  userName;
+  
   constructor() { }
 
   ngOnInit(): void {
+
+    this.userName=sessionStorage.getItem('name');
+
   }
 
 }

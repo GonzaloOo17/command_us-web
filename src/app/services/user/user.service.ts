@@ -53,12 +53,13 @@ export class UserService {
     return this._http.get<any>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant + '/card/' + cardId, {headers: this.headers});
   }
 
-  getCardQR(restaurant, cardId){
-    return this._http.get<any>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant + '/card/' + cardId + '/qr', {headers: this.headers});
+  getCardQR(restaurant, cardId, comedores){
+    let options: Object = { responseType: 'blob', headers:this.headers };
+    return this._http.post<Blob>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant + '/card/' + cardId + '/qr', comedores, options);
   }
 
   getCardById_Client(restaurant, cardId){
-    return this._http.get<any>(this.url+ '/restaurant/' +  restaurant + '/card/' + cardId, {headers: this.headers});
+    return this._http.get<any>(this.url+'/user/' + this.user + '/restaurant/' +  restaurant + '/card/' + cardId, {headers: this.headers});
   }
 
   getRestaurantById(restaurant){

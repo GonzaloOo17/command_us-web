@@ -32,8 +32,8 @@
                     Carta
                 </div>
                 <div class="card-body">
-                    <h4 class="rest-name mb-2" [routerLink]="['card-edit', card.id]">{{card.name}}</h4>
-                    <span class="text-primary mt-2" (click)="getQR(card.id)">
+                    <h4 class="rest-name mb-2" [routerLink]="['card-edit', card.id]" role="button">{{card.name}}</h4>
+                    <span class="text-primary mt-2" (click)="getQR(card.id)" role="button">
                         
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M3,11H5V13H3V11M11,5H13V9H11V5M9,11H13V15H11V13H9V11M15,11H17V13H19V11H21V13H19V15H21V19H19V21H17V19H13V21H11V17H15V15H17V13H15V11M19,19V15H17V19H19M15,3H21V9H15V3M17,5V7H19V5H17M3,3H9V9H3V3M5,5V7H7V5H5M3,15H9V21H3V15M5,17V19H7V17H5Z" />
@@ -43,7 +43,7 @@
                     </span>
                 </div>
             </div>
-            <div class="card d-flex align-items-center justify-content-center" [routerLink]="['/admin/add-card', restaurantId]">
+            <div class="card d-flex align-items-center justify-content-center" [routerLink]="['/admin/add-card', restaurantId]" role="button">
                 <svg style="width:88px;height:88px" class="text-grey" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
                 </svg>

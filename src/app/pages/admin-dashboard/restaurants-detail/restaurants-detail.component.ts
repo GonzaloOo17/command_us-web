@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { GetQRModalComponent } from 'src/app/components/ui/get-qr-modal/get-qr-modal.component';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -12,10 +14,12 @@ export class RestaurantsDetailComponent implements OnInit {
   cards: any[];
   restaurantId: string;
   qrImg;
-  
+
   restaurant: any;
 
-  constructor(private _user: UserService, private _route: ActivatedRoute) { }
+  qrModal: NgbModalRef;
+
+  constructor(private _user: UserService, private _route: ActivatedRoute, private _modal: NgbModal) { }
 
   ngOnInit(): void {
     this.restaurantId = this._route.snapshot.params.restaurantId;
@@ -34,11 +38,10 @@ export class RestaurantsDetailComponent implements OnInit {
   }
 
   getQR(card){
-    this._user.getCardQR(this.restaurantId, card)
-      .subscribe(data=>{
-        console.log(data);
-        this.qrImg=data.uri;
-      })
+    this.qrModal = this._modal.open(GetQRModalComponent, { size: 'lg' });
+    this.qrModal.componentInstance.card=card;
+    this.qrModal.componentInstance.restaurant=this.restaurantId;
+    
   }
 
 }
